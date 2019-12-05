@@ -1,0 +1,58 @@
+body{
+    background-color:white;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+ }
+#header{
+    display: flex;
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin: 1%;
+    align-items: center;
+    height: 60px;
+  } 
+#header .logo{
+    flex: 2;  
+  }
+#header .logo h1{
+      color:orangered;
+  }
+#header .logo .logocolor{
+      background-color: orangered;
+      border-radius: 20px;
+      color:white;      
+}
+#header .sidebar{
+    flex: 1;
+    
+}
+#header .sidebar a{
+    text-decoration: none;
+    padding: 2px;
+    color: white;
+    border-radius: 5px;
+  }
+  #header .sidebar a:hover{
+    color:orangered;  
+  }
+  #header .login{
+    flex: 0.5;
+  }
+  #header .login a{
+    text-decoration: none;
+    padding: 2px;
+    color: white;
+    background: blueviolet;
+    border-radius: 5px;
+  }
+  #data{
+    margin: 2% 10% 2% 10%; /* top right bottom left  */
+    background-color: aliceblue;
+    border-radius: 5px;
+  }
+footer{
+    text-align: center;
+    font-weight: bold;
+}

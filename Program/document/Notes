@@ -1,0 +1,5 @@
+                            TODO:- sleep()
+For using sleep. We have to import time module. In time module there is sleep(second) method.
+
+                            TODO:- To checks file exists or not
+For finding file exists or not, Then we have to import os module. And we used as os.path.exists(file).

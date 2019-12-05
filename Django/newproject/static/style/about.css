@@ -1,0 +1,39 @@
+.about{
+    display: flex;
+}
+.about p{
+    font-size: 13px;
+}
+h2{
+    color: cornflowerblue;
+    background-image: linear-gradient(to right,lightgreen,white)
+}
+.about .content{
+    flex: 2;
+    border-right: 2px dotted gray;
+}
+.about .contact{
+    flex: 1;
+    margin-left: 2%;
+}
+.about .contact img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: auto;
+}
+.about .contact span{
+    color: red;
+    font-weight: bolder;
+}
+@media screen and (max-width:600px){
+    .about p{
+        font-size: 12px;
+    }
+    .about .contact img{
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        margin:auto;
+    }
+}

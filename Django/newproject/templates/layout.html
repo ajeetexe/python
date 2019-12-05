@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{%static 'favicon.ico'%}" type="image/x-icon">
+    <title>Django Demo</title>
+</head>
+<body> 
+    <div id="header">
+        <div class="logo">
+            <h1><span class="logocolor">Django</span> Demo</h1>
+        </div>
+        <div class="sidebar">
+            <a id="home"  href="{%url 'index'%}">Home</a>
+            <a id="about" href="{%url 'about'%}">About</a>
+        </div>
+        <div class="login"><a id="signin" href="{%url 'signIn'%}">Login</a></div>
+    </div>
+    <div id="data">
+        {% block content %} {% endblock %}
+    </div>
+    
+</body>
+<footer>Django Demo &copy; 2019</footer>
+<link rel="stylesheet" href="{% static 'style/style.css' %}">
+<link rel="stylesheet" href="{% static 'style/index.css' %}">
+<link rel="stylesheet" href="{% static 'style/about.css' %}">
+<script src="{% static 'js/link.js' %}"></script>
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+</html>

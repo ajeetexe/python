@@ -1,0 +1,12 @@
+.home h2{
+    color: cornflowerblue;
+    background-image: linear-gradient(to right,lightgreen,white)
+}
+.home p{
+    font-size: 13px;
+}
+@media screen and (max-width:600px){
+    .home p{
+        font-size: 12px;
+    }
+}
