@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="shortcut icon" href="{% static 'image/favicon.ico' %}" type="image/x-icon">
+    <title>Ajeet Kumar Public School</title>
+</head>
+<body>
+    <nav class="mainNav">
+        <div class="brand">
+            <a href="{% url 'home' %}"><h1>A. K. P. School</h1></a>
+            
+        </div>
+        <div class="linkpage">
+            <a href="#">Student</a>
+            <a href="#">Teach</a>
+            <a href="#">Management</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %} {% endblock %}
+    </div>
+    
+</body>
+</html>
