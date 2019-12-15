@@ -1,4 +1,5 @@
 *.pyc
+launch.json
 settings.json
 *.db
 db.sqlite3
