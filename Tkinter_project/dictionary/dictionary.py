@@ -5,6 +5,9 @@ from difflib import get_close_matches
 
 
 class Dictionary:
+    # database of dictionary
+    data = json.load(open('data.json'))
+    
     def __init__(self, dictionary):
         self.dictionary = dictionary
         self.dictionary.title("Dictionary")
@@ -16,8 +19,8 @@ class Dictionary:
         label = Label(
             dictionary, text="Type Your  Word and Press Enter Key:", bg="#fff", fg="#FF4500")
         label.place(x=10, y=10)
-        enter_value = StringVar()
-        self.entry = Entry(dictionary, textvariable=enter_value, width=40)
+        self.enter_value = StringVar()
+        self.entry = Entry(dictionary, textvariable=self.enter_value, width=40)
         self.entry.place(x=250, y=10)
         self.entry.focus()
         self.entry.bind('<Return>', lambda func1: self.execute())
@@ -25,21 +28,21 @@ class Dictionary:
         self.text.place(x=10, y=40)
 
     def execute(self):
-        data = func(self.entry.get())
+        data = self.func(self.entry.get())
         self.text.config(state="normal")
         self.text.delete(1.0, END)
         self.text.insert(END, data)
         self.text.config(state="disabled")
-
-data = json.load(open('data.json'))   
-def func(args):
+   
+    def func(self,args):
         args = args.title()
-        if args in data:
-            return data[args]
-        elif len(get_close_matches(args, data.keys())) > 0:
-            yesOrno = messagebox.askyesno("Available Word", 'Did you mean {} instead:- '.format(get_close_matches(args, data.keys())[0]))
+        if args in self.data:
+            return self.data[args]
+        elif len(get_close_matches(args, self.data.keys())) > 0:
+            yesOrno = messagebox.askyesno("Available Word", 'Did you mean {} instead:- '.format(get_close_matches(args, self.data.keys())[0]))
             if yesOrno == True:
-                return data[get_close_matches(args, data.keys())[0]]
+                self.enter_value.set(get_close_matches(args, self.data.keys())[0])
+                return self.data[get_close_matches(args, self.data.keys())[0]]
             elif yesOrno == False:
                 return 'The word you searching not exists in our storage'
             else:
